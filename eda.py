@@ -21,6 +21,9 @@ print("Men and wonem count")
 Men_Women_Count = new_df.groupby('Sex')
 Men_Women_Count.size()
 
+#removed invalid entries fom age
+new_df = df.dropna(subset=['Age'])
+
 print("Details of survivor")
 Survived_col = new_df.groupby('Survived')
 Survived_col.head()
