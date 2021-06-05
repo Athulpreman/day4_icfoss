@@ -15,24 +15,6 @@ df = pd.read_csv("titanic.csv")
 
 titanic = df.head(20)
 
-
-#Count of men and women in titanic
-print("Men and wonem count")
-Men_Women_Count = new_df.groupby('Sex')
-Men_Women_Count.size()
-
-print("Details of survivor")
-Survived_col = new_df.groupby('Survived')
-Survived_col.head()
-Survivor_Details=Survived_col.get_group(1)
-Survivor_Details.head(20)
-
-print("Survival count using numpy")
-df_survived = Survivor_Details[['Survived']]
-count=np.sum(df_survived)
-count
-
-
 st.table(titanic)
 st.header("Visualisation Using Seaborn")
 
