@@ -16,13 +16,15 @@ df = pd.read_csv("titanic.csv")
 titanic = df.head(20)
 
 
+#removed invalid entries fom age
+new_df = df.dropna(subset=['Age'])
+
 #Count of men and women in titanic
 print("Men and wonem count")
 Men_Women_Count = new_df.groupby('Sex')
 Men_Women_Count.size()
 
-#removed invalid entries fom age
-new_df = df.dropna(subset=['Age'])
+
 
 print("Details of survivor")
 Survived_col = new_df.groupby('Survived')
